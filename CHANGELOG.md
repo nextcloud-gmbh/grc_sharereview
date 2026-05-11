@@ -1,8 +1,9 @@
 # Changelog
 
-### 2.1.1 - 2026-05-11
-### Changed
+### 2.2.0 - 2026-05-11
+### Added
 - Show reshares also
+- Show expiration date
 
 ### Fixed
 - Error when deleting shares
