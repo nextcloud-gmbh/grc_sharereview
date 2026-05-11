@@ -69,7 +69,7 @@ class ShareService {
 
 		$formated = [];
 		foreach (array_merge($fileShares, $appShares) as $share) {
-			if ($onlyNew && (int)($share['time'] ?? 0) <= $userTimestamp) {
+			if ($onlyNew && $this->getComparableTimestamp($share) <= $userTimestamp) {
 				continue;
 			}
 
@@ -171,6 +171,21 @@ class ShareService {
 		return $this->dateTimeCache[$unixTime] ??= (new \DateTime('@' . $unixTime))->format(\DATE_ATOM);
 	}
 
+	private function getComparableTimestamp(array $share): int {
+		$time = $share['timestamp'] ?? $share['stime'] ?? $share['time'] ?? 0;
+
+		if (is_int($time)) {
+			return $time;
+		}
+
+		if (is_numeric($time)) {
+			return (int)$time;
+		}
+
+		$timestamp = strtotime((string)$time);
+		return $timestamp === false ? 0 : $timestamp;
+	}
+
 	private function buildPermissions(array $share): string {
 		$password = ($share['password'] ?? '') !== '' ? $share['password'] : '';
 		$expiration = ($share['expiration'] ?? '') !== '' ? $share['expiration'] : '';
@@ -184,7 +199,7 @@ class ShareService {
 	}
 
 	private function preloadDisplayNames(array $allShares, int $userTimestamp, bool $onlyNew): void {
-		$relevantShares = $onlyNew ? array_filter($allShares, fn($s) => (int)($s['time'] ?? 0) > $userTimestamp) : $allShares;
+		$relevantShares = $onlyNew ? array_filter($allShares, fn($s) => $this->getComparableTimestamp($s) > $userTimestamp) : $allShares;
 
 		// Preload initiators (most common)
 		$userIds = array_unique(array_column($relevantShares, 'uid_initiator', 0) ?: []);
@@ -272,6 +287,7 @@ class ShareService {
 			'permissions' => $share['permissions'],
 			'password' => ($share['password'] ?? '') !== '',
 			'expiration' => $share['expiration'],
+			'timestamp' => (int)$share['stime'],
 			'time' => $this->getFormattedTime((int)$share['stime']),
 			'action' => rawurlencode($action),
 		];

@@ -3,6 +3,7 @@
 ### 2.1.1 - 2026-05-11
 ### Fixed
 - Error when deleting shares
+- New shares not displayed #53
 
 ### 2.1.0 - 2025-12-08
 ### Changed
