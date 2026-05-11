@@ -142,6 +142,10 @@ class ShareService {
 
 		$recipientDisplay = $recipientId ? $this->getCachedDisplayName($type, $recipientId) : '';
 		$initiatorDisplay = ($share['initiator'] ?? '') ? $this->getCachedDisplayName(IShare::TYPE_USER, $share['initiator']) : '';
+		if (!empty($share['parent'])) {
+			$reshareLabel = $this->l10n->t('Reshare');
+			$recipientDisplay = $recipientDisplay !== '' ? $recipientDisplay . ' (' . $reshareLabel . ')' : $reshareLabel;
+		}
 
 		return [
 			'app' => $share['app'],
@@ -287,6 +291,7 @@ class ShareService {
 			'permissions' => $share['permissions'],
 			'password' => ($share['password'] ?? '') !== '',
 			'expiration' => $share['expiration'],
+			'parent' => $share['parent'],
 			'timestamp' => (int)$share['stime'],
 			'time' => $this->getFormattedTime((int)$share['stime']),
 			'action' => rawurlencode($action),

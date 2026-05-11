@@ -1,6 +1,9 @@
 # Changelog
 
 ### 2.1.1 - 2026-05-11
+### Changed
+- Show reshares also
+
 ### Fixed
 - Error when deleting shares
 - New shares not displayed #53
