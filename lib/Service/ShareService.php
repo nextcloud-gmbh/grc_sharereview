@@ -93,7 +93,8 @@ class ShareService {
 			$this->logger->info('deleting files share: ' . $shareString);
 			try {
 				$share = $this->shareManager->getShareById($shareString);
-				return $this->shareManager->deleteShare($share);
+				$this->shareManager->deleteShare($share);
+				return true;
 			} catch (ShareNotFound $e) {
 				// Share already gone — log at info level and return false (nothing deleted)
 				$this->logger->debug('Files share not found: ' . $shareString . ' - ' . $e->getMessage());
