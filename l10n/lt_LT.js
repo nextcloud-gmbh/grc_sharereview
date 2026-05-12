@@ -30,6 +30,7 @@ OC.L10N.register(
     "User" : "Naudotojas",
     "Group" : "Grupė",
     "Other" : "Kita",
+    "Reshare" : "Pakartotinai bendrinti",
     "Files" : "Failai",
     "Schedule" : "Tvarkaraštis",
     "None" : "Nėra",
