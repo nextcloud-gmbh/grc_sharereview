@@ -32,6 +32,7 @@ OC.L10N.register(
     "Other" : "Kita",
     "Reshare" : "Pakartotinai bendrinti",
     "Files" : "Failai",
+    "Delete selected" : "Ištrinti pasirinktus",
     "Schedule" : "Tvarkaraštis",
     "None" : "Nėra",
     "Daily" : "Kas dieną",
