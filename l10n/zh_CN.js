@@ -43,6 +43,7 @@ OC.L10N.register(
     "Files" : "文件",
     "Share Review" : "分享评论",
     "Review and audit all shares" : "检查并核对全部分享",
+    "Delete selected" : "删除所选",
     "No share found" : "未找到分享",
     "Click here" : "点击此处",
     "PDF" : "PDF",
