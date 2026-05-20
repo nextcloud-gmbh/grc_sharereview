@@ -23,7 +23,7 @@ This prevents accidental exposure of the shared content to all users.
 ]]></description>
     <version>2.2.0</version>
     <licence>agpl</licence>
-    <author>Marcel Scherello</author>
+    <author>Nextcloud GmbH</author>
     <namespace>ShareReview</namespace>
     <documentation>
         <user>https://github.com/nextcloud/sharereview</user>
