@@ -21,7 +21,7 @@ Note:
 The app must be restricted to at least one specific user group in the app store.
 This prevents accidental exposure of the shared content to all users.
 ]]></description>
-    <version>2.2.0</version>
+    <version>1.0.0-dev.1</version>
     <licence>AGPL-3.0-or-later</licence>
     <author>Nextcloud GmbH</author>
     <namespace>ShareReview</namespace>
