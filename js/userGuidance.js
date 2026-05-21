@@ -48,8 +48,8 @@ OCA.ShareReview.Notification = {
             + '<div style="text-align:center; padding-top:100px" class="get-metadata icon-loading"></div>'
             + '</div>'
             + '<br><div class="shareReviewDialogButtonrow">'
-            + '<a class="button-vue button-vue--vue-primary" id="shareReviewDialogBtnGo"><span class="button-vue__wrapper"><span class="button-vue__text">' + t('grc_sharereview', 'OK') + '</span></span></a>'
             + '<a class="button-vue button-vue--vue-tertiary" id="shareReviewDialogBtnCancel"><span class="button-vue__wrapper"><span class="button-vue__text">' + t('grc_sharereview', 'Cancel') + '</span></span></a>'
+            + '<a class="button-vue button-vue--vue-primary" id="shareReviewDialogBtnGo"><span class="button-vue__wrapper"><span class="button-vue__text">' + t('grc_sharereview', 'OK') + '</span></span></a>'
             + '</div></div>'
         );
         document.getElementById('shareReviewDialogContent').innerHTML = text;
@@ -94,8 +94,8 @@ OCA.ShareReview.Notification = {
             + '<div style="text-align:center; padding-top:100px" class="get-metadata icon-loading"></div>'
             + '</div>'
             + '<br><div class="shareReviewDialogButtonrow">'
-            + '<a class="button-vue button-vue--vue-primary" id="shareReviewDialogBtnGo"><span class="button-vue__wrapper"><span class="button-vue__text">' + t('grc_sharereview', 'OK') + '</span></span></a>'
             + '<a class="button-vue button-vue--vue-tertiary" id="shareReviewDialogBtnCancel"><span class="button-vue__wrapper"><span class="button-vue__text">' + t('grc_sharereview', 'Cancel') + '</span></span></a>'
+            + '<a class="button-vue button-vue--vue-primary" id="shareReviewDialogBtnGo"><span class="button-vue__wrapper"><span class="button-vue__text">' + t('grc_sharereview', 'OK') + '</span></span></a>'
             + '</div></div>'
         );
 

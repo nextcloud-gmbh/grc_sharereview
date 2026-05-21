@@ -179,12 +179,22 @@ div.dt-container .dt-paging .dt-paging-button {
 }
 
 .shareReviewDialogHeader {
-    background-image: url(../img/app-dark.svg);
-    filter: var(--background-invert-if-dark);
-    background-size: 16px 16px;
-    background-position: 0;
-    background-repeat: no-repeat;
     padding-left: 25px;
+    position: relative;
+}
+
+.shareReviewDialogHeader::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/app-dark.svg);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    filter: var(--background-invert-if-dark);
 }
 
 .shareReviewDialogClose {
