@@ -50,30 +50,30 @@
         <table>
             <tr>
                 <td style="width: 200px"><label for="defaultFolder"><?php p($l->t('Default folder')); ?></label></td>
-                <td><input type="text" id="defaultFolder" readonly></td>
+                <td><div class="input-field input-field--label-outside"><div class="input-field__main-wrapper"><input type="text" id="defaultFolder" class="input-field__input" readonly></div></div></td>
             </tr>
             <tr>
                 <td><label for="folderOwner"><?php p($l->t('Folder owner')); ?></label></td>
-                <td><input type="text" id="folderOwner" disabled></td>
+                <td><div class="input-field input-field--label-outside input-field--disabled"><div class="input-field__main-wrapper"><input type="text" id="folderOwner" class="input-field__input" disabled></div></div></td>
             </tr>
             <tr>
                 <td><label for="scheduleSelect"><?php p($l->t('Schedule')); ?></label></td>
                 <td>
-                    <select id="scheduleSelect">
+                    <div class="input-field input-field--label-outside"><div class="input-field__main-wrapper"><select id="scheduleSelect">
                         <option value="none"><?php p($l->t('None')); ?></option>
                         <option value="daily"><?php p($l->t('Daily')); ?></option>
                         <option value="weekly"><?php p($l->t('Weekly')); ?></option>
                         <option value="monthly"><?php p($l->t('Monthly')); ?></option>
-                    </select>
+                    </select></div></div>
                 </td>
             </tr>
             <tr>
                 <td><label for="typeSelect"><?php p($l->t('Format')); ?></label></td>
                 <td>
-                    <select id="typeSelect">
+                    <div class="input-field input-field--label-outside"><div class="input-field__main-wrapper"><select id="typeSelect">
                         <option value="pdf"><?php p($l->t('PDF')); ?></option>
                         <option value="csv"><?php p($l->t('CSV')); ?></option>
-                    </select>
+                    </select></div></div>
                 </td>
             </tr>
             <tr>

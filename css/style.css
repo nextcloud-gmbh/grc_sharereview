@@ -500,12 +500,131 @@ div.dt-container .dt-paging .dt-paging-button {
     background-color: var(--color-error);
 }
 
-#exportContainer input[type="text"] {
-        width: 200px;
+/* NcInputField-matching styles */
+#exportContainer .input-field {
+    position: relative;
+    width: 100%;
 }
 
-#exportContainer select {
-        width: 200px;
+#exportContainer .input-field--label-outside {
+    margin-block-start: 0;
+}
+
+#exportContainer .input-field--disabled {
+    opacity: 0.4;
+    filter: saturate(0.4);
+}
+
+#exportContainer .input-field__main-wrapper {
+    height: var(--default-clickable-area);
+    padding: var(--border-width-input-focused, 2px);
+    position: relative;
+    box-sizing: border-box;
+}
+
+#exportContainer .input-field__input {
+    --input-border-color: var(--color-border-maxcontrast);
+    --input-border-box-shadow-light: 0 -1px var(--input-border-color),
+        0 0 0 1px color-mix(in srgb, var(--input-border-color), 65% transparent);
+    --input-border-box-shadow-dark: 0 1px var(--input-border-color),
+        0 0 0 1px color-mix(in srgb, var(--input-border-color), 65% transparent);
+    --input-border-box-shadow: var(--input-border-box-shadow-light);
+    border: none;
+    border-radius: var(--border-radius-element);
+    box-shadow: var(--input-border-box-shadow);
+    background-color: var(--color-main-background);
+    color: var(--color-main-text);
+    font-size: var(--default-font-size);
+    text-overflow: ellipsis;
+    padding-block: 0;
+    padding-inline: var(--border-radius-large);
+    height: 100% !important;
+    min-height: unset;
+    width: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+[data-theme-dark] #exportContainer .input-field__input {
+    --input-border-box-shadow: var(--input-border-box-shadow-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+    #exportContainer .input-field__input {
+        --input-border-box-shadow: var(--input-border-box-shadow-dark);
+    }
+}
+
+[data-theme-light] #exportContainer .input-field__input {
+    --input-border-box-shadow: var(--input-border-box-shadow-light);
+}
+
+#exportContainer .input-field__input:hover:not([disabled]) {
+    box-shadow: 0 0 0 1px var(--input-border-color);
+}
+
+#exportContainer .input-field__input:focus:not([disabled]),
+#exportContainer .input-field__input:active:not([disabled]) {
+    --input-border-color: var(--color-main-text);
+    box-shadow: 0 0 0 2px var(--input-border-color), 0 0 0 4px var(--color-main-background) !important;
+}
+
+#exportContainer .input-field__input:focus {
+    cursor: text;
+}
+
+#exportContainer .input-field__input:disabled {
+    cursor: default;
+}
+
+/* NcInputField-matching styles for select elements */
+#exportContainer .input-field__main-wrapper > select {
+    --input-border-color: var(--color-border-maxcontrast);
+    --input-border-box-shadow-light: 0 -1px var(--input-border-color),
+        0 0 0 1px color-mix(in srgb, var(--input-border-color), 65% transparent);
+    --input-border-box-shadow-dark: 0 1px var(--input-border-color),
+        0 0 0 1px color-mix(in srgb, var(--input-border-color), 65% transparent);
+    --input-border-box-shadow: var(--input-border-box-shadow-light);
+    border: none;
+    border-radius: var(--border-radius-element);
+    box-shadow: var(--input-border-box-shadow);
+    background-color: var(--color-main-background);
+    height: 100%;
+    min-height: unset;
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+[data-theme-dark] #exportContainer .input-field__main-wrapper > select {
+    --input-border-box-shadow: var(--input-border-box-shadow-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+    #exportContainer .input-field__main-wrapper > select {
+        --input-border-box-shadow: var(--input-border-box-shadow-dark);
+    }
+}
+
+[data-theme-light] #exportContainer .input-field__main-wrapper > select {
+    --input-border-box-shadow: var(--input-border-box-shadow-light);
+}
+
+#exportContainer .input-field__main-wrapper > select:hover:not([disabled]) {
+    box-shadow: 0 0 0 1px var(--input-border-color);
+    background-color: var(--color-main-background) !important;
+}
+
+#exportContainer .input-field__main-wrapper > select:focus:not([disabled]),
+#exportContainer .input-field__main-wrapper > select:active:not([disabled]) {
+    --input-border-color: var(--color-main-text);
+    box-shadow: 0 0 0 2px var(--input-border-color), 0 0 0 4px var(--color-main-background) !important;
+    background-color: var(--color-main-background) !important;
+}
+
+#exportContainer table td {
+    padding-block: calc(var(--default-grid-baseline, 4px) * 1.5);
 }
 
 #dataTable .dt-type-numeric {
