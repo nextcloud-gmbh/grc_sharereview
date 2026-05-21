@@ -50,7 +50,7 @@ OCA.ShareReview.UI = {
         let checkboxes = document.querySelectorAll('#dataTable .share-selection');
         let checkedCount = document.querySelectorAll('#dataTable .share-selection:checked').length;
         let deleteBtn = document.getElementById('deleteSelectedShares');
-        if (deleteBtn) deleteBtn.hidden = checkedCount <= 1;
+        if (deleteBtn) deleteBtn.hidden = checkedCount < 1;
         let headerCheckbox = document.getElementById('selectAllShares');
         if (headerCheckbox) headerCheckbox.checked = (checkboxes.length > 0 && checkedCount === checkboxes.length);
     },

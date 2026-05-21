@@ -66,7 +66,7 @@
 }
 
 .icon-sharereview-email {
-    background-image: url(../img/email.svg);
+    background-image: url(../img/mail.svg);
     filter: var(--background-invert-if-dark);
     background-size: 16px;
     background-position: left !important;
@@ -162,9 +162,21 @@
     padding-left: 10px;
 }
 
-.share-selection {
+.share-selection,
+#selectAllShares {
     min-height: 0;
     height: 13px !important;
+    accent-color: var(--color-primary-element);
+}
+
+body[data-theme-light] .share-selection,
+body[data-theme-light] #selectAllShares {
+    color-scheme: light;
+}
+
+body[data-theme-dark] .share-selection,
+body[data-theme-dark] #selectAllShares {
+    color-scheme: dark;
 }
 
 /* make the pagination smaller */
@@ -450,6 +462,127 @@ div.dt-container .dt-paging .dt-paging-button {
 #app-navigation>ul>li>ul>li.active, #app-navigation>ul>li>ul>li.active>a, #app-navigation>ul>li>ul>li a.selected, #app-navigation>ul>li>ul>li a.selected>a {
     border-radius: var(--border-radius-pill);
     background-color: var(--color-primary-element-light);
+}
+
+/* NcButton-matching styles */
+.button-vue {
+    --button-size: var(--default-clickable-area, 44px);
+    --button-inner-size: calc(var(--button-size) - 4px);
+    --button-radius: var(--border-radius-element, calc(var(--button-size) / 2));
+    --button-padding-default: clamp(var(--default-grid-baseline, 4px), var(--button-radius), calc(var(--default-grid-baseline, 4px) * 4));
+    --button-padding: var(--default-grid-baseline, 4px) var(--button-padding-default);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-height: var(--button-size);
+    min-width: var(--button-size);
+    padding-block: 1px 0;
+    padding-inline: var(--button-padding);
+    border-radius: var(--button-radius);
+    border: 1px solid var(--color-primary-element-light-hover);
+    border-bottom-width: 2px;
+    font-size: var(--default-font-size, 15px);
+    font-weight: bold;
+    cursor: pointer;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-decoration: none;
+    background-color: var(--color-primary-element-light);
+    color: var(--color-primary-element-light-text);
+    transition: color 0.1s linear, border-color 0.1s linear, background-color 0.1s linear;
+}
+
+.button-vue[hidden] {
+    display: none !important;
+}
+
+.button-vue, .button-vue * {
+    cursor: pointer;
+}
+
+.button-vue:focus {
+    outline: none;
+}
+
+.button-vue:disabled {
+    cursor: default;
+    opacity: 0.5;
+    filter: saturate(0.7);
+}
+
+.button-vue:hover:not(:disabled) {
+    background-color: var(--color-primary-element-light-hover);
+}
+
+.button-vue:focus-visible {
+    outline: 2px solid var(--color-main-text) !important;
+    box-shadow: 0 0 0 4px var(--color-main-background) !important;
+}
+
+.button-vue__wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.button-vue__text {
+    font-weight: bold;
+    margin-bottom: 1px;
+    padding: 2px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-inline: 4px;
+}
+
+.button-vue--vue-primary {
+    background-color: var(--color-primary-element);
+    border-color: var(--color-primary-element-hover);
+    color: var(--color-primary-element-text);
+}
+
+.button-vue--vue-primary:hover:not(:disabled) {
+    background-color: var(--color-primary-element-hover);
+}
+
+.button-vue--vue-primary:active {
+    background-color: var(--color-primary-element);
+}
+
+.button-vue--vue-secondary {
+    background-color: var(--color-primary-element-light);
+    border-color: var(--color-primary-element-light-hover);
+    color: var(--color-primary-element-light-text);
+}
+
+.button-vue--vue-secondary:hover:not(:disabled) {
+    background-color: var(--color-primary-element-light-hover);
+}
+
+.button-vue--vue-tertiary {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--color-main-text);
+}
+
+.button-vue--vue-tertiary:hover:not(:disabled) {
+    background-color: color-mix(in srgb, var(--color-primary-element) 8%, transparent);
+}
+
+.button-vue--vue-error {
+    background-color: var(--color-error);
+    border-color: var(--color-error-hover);
+    color: var(--color-error-text);
+}
+
+.button-vue--vue-error:hover:not(:disabled) {
+    background-color: var(--color-error-hover);
+}
+
+.button-vue--vue-error:active {
+    background-color: var(--color-error);
 }
 
 #exportContainer input[type="text"] {

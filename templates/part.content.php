@@ -18,7 +18,7 @@
         <br>
         <br>
         <div id="tableActions" style="margin-bottom:10px;">
-            <button id="deleteSelectedShares" class="button"><?php p($l->t('Delete selected')); ?></button>
+            <button id="deleteSelectedShares" class="button-vue button-vue--vue-error"><span class="button-vue__wrapper"><span class="button-vue__text"><?php p($l->t('Delete selected')); ?></span></span></button>
             <br><br>
             <input type="checkbox" id="pauseUpdate" class="checkbox"><label for="pauseUpdate"><?php p($l->t('Pause reload after deletion')); ?></label>
         </div>
@@ -42,8 +42,8 @@
     <div id="exportContainer" hidden>
         <h5><?php p($l->t('On demand report')); ?></h5>
         <p>
-            <button id="exportCsv" class="button"><?php p($l->t('CSV')); ?></button>
-            <button id="exportPdf" class="button"><?php p($l->t('PDF')); ?></button>
+            <button id="exportCsv" class="button-vue button-vue--vue-secondary"><span class="button-vue__wrapper"><span class="button-vue__text"><?php p($l->t('CSV')); ?></span></span></button>
+            <button id="exportPdf" class="button-vue button-vue--vue-secondary"><span class="button-vue__wrapper"><span class="button-vue__text"><?php p($l->t('PDF')); ?></span></span></button>
         </p>
         <br><br>
         <h5><?php p($l->t('Scheduled report')); ?></h5>
@@ -78,7 +78,7 @@
             </tr>
             <tr>
                 <td colspan="2" style="text-align: right;">
-                    <button id="saveSettings" class="button"><?php p($l->t('Save')); ?></button>
+                    <button id="saveSettings" class="button-vue button-vue--vue-primary"><span class="button-vue__wrapper"><span class="button-vue__text"><?php p($l->t('Save')); ?></span></span></button>
                 </td>
             </tr>
         </table>
