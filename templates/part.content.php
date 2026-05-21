@@ -7,7 +7,7 @@
  */
 
 ?>
-<div id="sharereview-content" style="width:100%; padding: 20px 5%;">
+<div id="sharereview-content" style="width:100%; padding: 4px 20px;">
     <h2 id="reportHeader">
         <?php // TRANSLATORS "Share Review" is the app name
         p($l->t('Share Review')); ?></h2>
@@ -85,6 +85,6 @@
     </div>
 
 </div>
-<div id="shareReview-loading" style="width:100%; padding: 100px 5%;" hidden>
+<div id="shareReview-loading" style="width:100%; padding: 4px 20px;" hidden>
     <div style="text-align:center; padding-top:100px" class="get-metadata icon-loading"></div>
 </div>
