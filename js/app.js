@@ -114,14 +114,16 @@ OCA.ShareReview.Navigation = {
                 name: t('grc_sharereview', 'Confirm reviewed'),
                 event: OCA.ShareReview.Navigation.handleConfirmNavigation,
                 style: 'icon-sharereview-check',
-                pinned: false
+                pinned: false,
+                indent: true
             },
             {
                 id: 'navReset',
                 name: t('grc_sharereview', 'Reset time'),
                 event: OCA.ShareReview.Navigation.handleConfirmResetNavigation,
                 style: 'icon-sharereview-reset',
-                pinned: false
+                pinned: false,
+                indent: true
             }
         ];
         for (let navigation of navigations) {
@@ -138,6 +140,7 @@ OCA.ShareReview.Navigation = {
         }
         let spacer = document.createElement('li');
         spacer.id = 'navSpacer';
+        spacer.style.flex = '1 1 auto';
         container.appendChild(spacer);
         container.appendChild(OCA.ShareReview.Navigation.buildNavigationRow({
             id: 'navExport',
@@ -148,7 +151,9 @@ OCA.ShareReview.Navigation = {
         }));
 
         let liTalk = document.createElement('li');
-        liTalk.classList.add('pinned', 'first-pinned');
+        liTalk.classList.add('app-navigation-entry');
+        let talkInner = document.createElement('div');
+        talkInner.classList.add('app-navigation-entry-link', 'app-navigation-entry--talk');
         let checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.id = 'showTalkShares';
@@ -158,20 +163,40 @@ OCA.ShareReview.Navigation = {
         let label = document.createElement('label');
         label.setAttribute('for', 'showTalkShares');
         label.innerText = t('grc_sharereview', 'Show talk shares');
-        liTalk.appendChild(checkbox);
-        liTalk.appendChild(label);
+        talkInner.appendChild(checkbox);
+        talkInner.appendChild(label);
+        liTalk.appendChild(talkInner);
         container.appendChild(liTalk);
     },
 
     buildNavigationRow: function (data) {
         let li = document.createElement('li');
         li.id = data['id'];
-        if (data['pinned']) li.classList.add('pinned', 'first-pinned');
-        let a = document.createElement('a');
-        data['style'] ? a.classList.add(data['style'], 'svg'): false;
-        data['event'] ? a.addEventListener('click', data['event']) : false;
-        a.innerText = data['name'];
-        li.appendChild(a);
+        li.classList.add('app-navigation-entry');
+        if (data['indent']) li.classList.add('app-navigation-entry--child');
+        let inner;
+        if (data['event']) {
+            inner = document.createElement('button');
+            inner.classList.add('app-navigation-entry-link', 'app-navigation-entry-button');
+            inner.type = 'button';
+            inner.addEventListener('click', data['event']);
+        } else {
+            inner = document.createElement('div');
+            inner.classList.add('app-navigation-entry-link');
+        }
+        if (data['style']) {
+            let iconDiv = document.createElement('div');
+            iconDiv.classList.add('app-navigation-entry-icon');
+            let iconSpan = document.createElement('span');
+            iconSpan.classList.add(data['style']);
+            iconDiv.appendChild(iconSpan);
+            inner.appendChild(iconDiv);
+        }
+        let nameSpan = document.createElement('span');
+        nameSpan.classList.add('app-navigation-entry__name');
+        nameSpan.innerText = data['name'];
+        inner.appendChild(nameSpan);
+        li.appendChild(inner);
         return li;
     },
 
@@ -339,7 +364,7 @@ OCA.ShareReview.Backend = {
                     });
                     container.insertBefore(navTime, spacer);
                 } else {
-                    navTime.firstChild.innerText = date.toLocaleString();
+                    navTime.querySelector('.app-navigation-entry__name').innerText = date.toLocaleString();
                 }
             });
     },
