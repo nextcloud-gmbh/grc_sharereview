@@ -47,10 +47,10 @@ OCA.ShareReview.Visualization = {
 
         let language = {
             // TRANSLATORS Noun
-            search: t('sharereview', 'Search'),
-            lengthMenu: t('sharereview', 'Show _MENU_ entries'),
-            info: t('sharereview', 'Showing _START_ to _END_ of _TOTAL_ entries'),
-            infoEmpty: t('sharereview', 'Showing 0 to 0 of 0 entries'),
+            search: t('grc_sharereview', 'Search'),
+            lengthMenu: t('grc_sharereview', 'Show _MENU_ entries'),
+            info: t('grc_sharereview', 'Showing _START_ to _END_ of _TOTAL_ entries'),
+            infoEmpty: t('grc_sharereview', 'Showing 0 to 0 of 0 entries'),
             paginate: {
                 first: '<<',
                 previous: '<',
@@ -60,13 +60,13 @@ OCA.ShareReview.Visualization = {
         };
 
         let columnTitles = {
-            app: t('sharereview', 'App'),
-            object: t('sharereview', 'Item'),
-            initiator: t('sharereview', 'Initiator'),
-            type: t('sharereview', 'Type'),
-            permissions: t('sharereview', 'Permissions'),
-            time: t('sharereview', 'Time'),
-            action: t('sharereview', 'Action'),
+            app: t('grc_sharereview', 'App'),
+            object: t('grc_sharereview', 'Item'),
+            initiator: t('grc_sharereview', 'Initiator'),
+            type: t('grc_sharereview', 'Type'),
+            permissions: t('grc_sharereview', 'Permissions'),
+            time: t('grc_sharereview', 'Time'),
+            action: t('grc_sharereview', 'Action'),
         };
 
         let columns = Object.keys(data[0]).map(key => ({
@@ -76,7 +76,7 @@ OCA.ShareReview.Visualization = {
 
         columns = OCA.ShareReview.Visualization.addColumnRender(columns);
         columns.unshift({
-            title: '<input type="checkbox" id="selectAllShares" title="' + t('sharereview', 'Select all') + '">',
+            title: '<input type="checkbox" id="selectAllShares" title="' + t('grc_sharereview', 'Select all') + '">',
             data: 'action',
             orderable: false,
             render: OCA.ShareReview.Visualization.renderSelect
@@ -128,14 +128,14 @@ OCA.ShareReview.Visualization = {
 
     renderPermissions: function (data) {
         let iconClass = 'icon-sharereview-more';
-        let titleText = t('sharereview', 'more')
+        let titleText = t('grc_sharereview', 'more')
         let dataArray = data.split(';');
 
         switch (parseInt(dataArray[0])) {
             case 1:
             case 17:
                 iconClass = 'icon-sharereview-read';
-                titleText = t('sharereview', 'read');
+                titleText = t('grc_sharereview', 'read');
                 break;
             case 2:
             case 5:
@@ -143,7 +143,7 @@ OCA.ShareReview.Visualization = {
             case 15:
             case 19:
                 iconClass = 'icon-sharereview-edit';
-                titleText = t('sharereview', 'edit');
+                titleText = t('grc_sharereview', 'edit');
                 break;
         }
 
@@ -151,10 +151,10 @@ OCA.ShareReview.Visualization = {
             '<div permission="' + dataArray[0] + '" class="' + iconClass + '" title="' + titleText + '"></div>';
 
         if (dataArray[1] !== '') {
-            returnString += '&nbsp;<div class="icon-sharereview-password" title="' + t('sharereview', 'Password protected') + '"></div>';
+            returnString += '&nbsp;<div class="icon-sharereview-password" title="' + t('grc_sharereview', 'Password protected') + '"></div>';
         }
         if (dataArray[2] !== '') {
-            returnString += '&nbsp;<div class="icon-sharereview-calendar" title="' + t('sharereview', 'Expiration date: ')  + dataArray[2] + '"></div>';
+            returnString += '&nbsp;<div class="icon-sharereview-calendar" title="' + t('grc_sharereview', 'Expiration date: ')  + dataArray[2] + '"></div>';
         }
         returnString += '</div>';
         return returnString;
@@ -177,36 +177,36 @@ OCA.ShareReview.Visualization = {
         switch (parseInt(dataArray[0])) {
             case 12:
                 iconClass = 'icon-sharereview-deck';
-                titleText = t('sharereview', 'Deck');
+                titleText = t('grc_sharereview', 'Deck');
                 break;
             case 10:
                 iconClass = 'icon-sharereview-talk';
-                titleText = t('sharereview', 'Talk room');
+                titleText = t('grc_sharereview', 'Talk room');
                 break;
             case 7:
                 iconClass = 'icon-sharereview-team';
-                titleText = t('sharereview', 'Team');
+                titleText = t('grc_sharereview', 'Team');
                 break;
             case 9: // remote group
             case 6:
                 iconClass = 'icon-sharereview-federation';
-                titleText = t('sharereview', 'Federation');
+                titleText = t('grc_sharereview', 'Federation');
                 break;
             case 4:
                 iconClass = 'icon-sharereview-email';
-                titleText = t('sharereview', 'E-mail');
+                titleText = t('grc_sharereview', 'E-mail');
                 break;
             case 3:
                 iconClass = 'icon-sharereview-link';
-                titleText = t('sharereview', 'Link');
+                titleText = t('grc_sharereview', 'Link');
                 break;
             case 1:
                 iconClass = 'icon-sharereview-group';
-                titleText = t('sharereview', 'User group');
+                titleText = t('grc_sharereview', 'User group');
                 break;
             case 0:
                 iconClass = 'icon-sharereview-user';
-                titleText = t('sharereview', 'User');
+                titleText = t('grc_sharereview', 'User');
                 break;
         }
 

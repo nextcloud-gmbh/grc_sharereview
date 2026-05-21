@@ -70,9 +70,9 @@ class ReportService {
 	 * Generate report using stored default folder
 	 */
 	public function generateDefault(): void {
-		$owner = $this->appConfig->getValueString('sharereview', 'folderOwner', '');
-		$folder = $this->appConfig->getValueString('sharereview', 'reportFolder', '');
-		$type = $this->appConfig->getValueString('sharereview', 'reportType', 'pdf');
+		$owner = $this->appConfig->getValueString('grc_sharereview', 'folderOwner', '');
+		$folder = $this->appConfig->getValueString('grc_sharereview', 'reportFolder', '');
+		$type = $this->appConfig->getValueString('grc_sharereview', 'reportType', 'pdf');
 		if ($owner === '' || $folder === '') {
 			return;
 		}

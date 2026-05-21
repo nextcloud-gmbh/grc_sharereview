@@ -58,8 +58,8 @@ class ShareService {
 	 */
 	public function read(bool $onlyNew, ?string $backgroundUserId = null): array {
 		$user = $backgroundUserId ?? $this->userSession->getUser()->getUID();
-		$userTimestamp = (int)$this->config->getUserValue($user, 'sharereview', 'reviewTimestamp', 0);
-		$showTalk = $this->config->getUserValue($user, 'sharereview', 'showTalk', 'true') !== 'false';
+		$userTimestamp = (int)$this->config->getUserValue($user, 'grc_sharereview', 'reviewTimestamp', 0);
+		$showTalk = $this->config->getUserValue($user, 'grc_sharereview', 'showTalk', 'true') !== 'false';
 
 		$fileShares = $this->getFileShares($showTalk);
 		$appShares = $this->getAppShares();
@@ -116,7 +116,7 @@ class ShareService {
 	 */
 	public function confirm(string $timestamp): string {
 		$user = $this->userSession->getUser();
-		$this->config->setUserValue($user->getUID(), 'sharereview', 'reviewTimestamp', $timestamp);
+		$this->config->setUserValue($user->getUID(), 'grc_sharereview', 'reviewTimestamp', $timestamp);
 		return $timestamp;
 	}
 
@@ -125,7 +125,7 @@ class ShareService {
 	 */
 	public function showTalk(bool $state): bool {
 		$user = $this->userSession->getUser();
-		$this->config->setUserValue($user->getUID(), 'sharereview', 'showTalk', $state ? 'true' : 'false');
+		$this->config->setUserValue($user->getUID(), 'grc_sharereview', 'showTalk', $state ? 'true' : 'false');
 		return $state;
 	}
 
@@ -133,7 +133,7 @@ class ShareService {
 	 * app can only be used when it is restricted to at least one group for security reasons
 	 */
 	public function isSecured(): bool {
-		return $this->appConfig->getFilteredValues('sharereview')['enabled'] !== 'yes';
+		return $this->appConfig->getFilteredValues('grc_sharereview')['enabled'] !== 'yes';
 	}
 
 	private function formatShare(array $share): array {

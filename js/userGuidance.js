@@ -48,8 +48,8 @@ OCA.ShareReview.Notification = {
             + '<div style="text-align:center; padding-top:100px" class="get-metadata icon-loading"></div>'
             + '</div>'
             + '<br><div class="shareReviewDialogButtonrow">'
-            + '<a class="button primary" id="shareReviewDialogBtnGo">' + t('sharereview', 'OK') + '</a>'
-            + '<a class="button" id="shareReviewDialogBtnCancel">' + t('sharereview', 'Cancel') + '</a>'
+            + '<a class="button primary" id="shareReviewDialogBtnGo">' + t('grc_sharereview', 'OK') + '</a>'
+            + '<a class="button" id="shareReviewDialogBtnCancel">' + t('grc_sharereview', 'Cancel') + '</a>'
             + '</div></div>'
         );
         document.getElementById('shareReviewDialogContent').innerHTML = text;
@@ -94,8 +94,8 @@ OCA.ShareReview.Notification = {
             + '<div style="text-align:center; padding-top:100px" class="get-metadata icon-loading"></div>'
             + '</div>'
             + '<br><div class="shareReviewDialogButtonrow">'
-            + '<a class="button primary" id="shareReviewDialogBtnGo">' + t('sharereview', 'OK') + '</a>'
-            + '<a class="button" id="shareReviewDialogBtnCancel">' + t('sharereview', 'Cancel') + '</a>'
+            + '<a class="button primary" id="shareReviewDialogBtnGo">' + t('grc_sharereview', 'OK') + '</a>'
+            + '<a class="button" id="shareReviewDialogBtnCancel">' + t('grc_sharereview', 'Cancel') + '</a>'
             + '</div></div>'
         );
 

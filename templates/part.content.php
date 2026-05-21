@@ -36,7 +36,7 @@
         <br><br>
                 <?php p($l->t('The app must be restricted to at least one specific user group in the app store. This prevents accidental exposure of the shared content to all users.')); ?>
         <br><br>
-        <a href="/settings/apps/enabled/sharereview"><?php p($l->t('Click here')); ?></a>
+        <a href="/settings/apps/enabled/grc_sharereview"><?php p($l->t('Click here')); ?></a>
     </div>
 
     <div id="exportContainer" hidden>

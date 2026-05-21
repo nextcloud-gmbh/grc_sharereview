@@ -1,9 +1,9 @@
 # SPDX-FileCopyrightText: 2024 Marcel Scherello
 # SPDX-License-Identifier: AGPL-3.0-or-later
 version = 1
-SPDX-PackageName = "sharereview"
-SPDX-PackageSupplier = "Marcel Scherello <sharereview@scherello.de>"
-SPDX-PackageDownloadLocation = "https://github.com/nextcloud/sharereview"
+SPDX-PackageName = "grc_sharereview"
+SPDX-PackageSupplier = "Nextcloud GmbH"
+SPDX-PackageDownloadLocation = "https://github.com/nextcloud-gmbh/grc_sharereview"
 
 [[annotations]]
 path = "l10n/**"

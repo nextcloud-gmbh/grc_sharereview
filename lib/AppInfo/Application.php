@@ -15,7 +15,7 @@ use OCP\AppFramework\Bootstrap\IRegistrationContext;
 
 class Application extends App implements IBootstrap
 {
-    public const APP_ID = 'sharereview';
+    public const APP_ID = 'grc_sharereview';
 
     public function __construct(array $urlParams = [])
     {

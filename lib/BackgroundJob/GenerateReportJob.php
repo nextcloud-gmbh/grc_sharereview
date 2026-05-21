@@ -41,7 +41,7 @@ class GenerateReportJob extends TimedJob {
 	}
 
 	public function getInterval(): int {
-		$schedule = $this->appConfig->getValueString('sharereview', 'schedule', 'none');
+		$schedule = $this->appConfig->getValueString('grc_sharereview', 'schedule', 'none');
 		return match ($schedule) {
 			'daily' => 60 * 60 * 24,
 			'weekly' => 60 * 60 * 24 * 7,

@@ -53,12 +53,12 @@ class PageController extends Controller {
 	 */
 	public function index() {
 		$user = $this->userSession->getUser();
-		$this->initialState->provideInitialState('reviewTimestamp', $this->config->getUserValue($user->getUID(), 'sharereview', 'reviewTimestamp', 0));
-		$this->initialState->provideInitialState('showTalk', $this->config->getUserValue($user->getUID(), 'sharereview', 'showTalk', 'false'));
-		$this->initialState->provideInitialState('reportFolder', $this->appConfig->getValueString('sharereview', 'reportFolder', ''));
-		$this->initialState->provideInitialState('schedule', $this->appConfig->getValueString('sharereview', 'schedule', 'none'));
-		$this->initialState->provideInitialState('reportType', $this->appConfig->getValueString('sharereview', 'reportType', 'pdf'));
-		$this->initialState->provideInitialState('folderOwner', $this->appConfig->getValueString('sharereview', 'folderOwner', ''));
+		$this->initialState->provideInitialState('reviewTimestamp', $this->config->getUserValue($user->getUID(), 'grc_sharereview', 'reviewTimestamp', 0));
+		$this->initialState->provideInitialState('showTalk', $this->config->getUserValue($user->getUID(), 'grc_sharereview', 'showTalk', 'false'));
+		$this->initialState->provideInitialState('reportFolder', $this->appConfig->getValueString('grc_sharereview', 'reportFolder', ''));
+		$this->initialState->provideInitialState('schedule', $this->appConfig->getValueString('grc_sharereview', 'schedule', 'none'));
+		$this->initialState->provideInitialState('reportType', $this->appConfig->getValueString('grc_sharereview', 'reportType', 'pdf'));
+		$this->initialState->provideInitialState('folderOwner', $this->appConfig->getValueString('grc_sharereview', 'folderOwner', ''));
 		$params = array();
 		return new TemplateResponse($this->appName, 'main', $params);
 	}

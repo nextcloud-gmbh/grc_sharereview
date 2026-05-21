@@ -7,12 +7,13 @@
  */
 
 use OCP\Util;
-Util::addStyle('sharereview', 'style');
-Util::addStyle('sharereview', '3rdParty/datatables.min');
-Util::addScript('sharereview', 'app');
-Util::addScript('sharereview', 'visualization');
-Util::addScript('sharereview', '3rdParty/datatables.min');
-Util::addScript('sharereview', 'userGuidance');
+Util::addStyle('grc_sharereview', 'style');
+Util::addStyle('grc_sharereview', '3rdParty/datatables.min');
+Util::addScript('grc_sharereview', '3rdParty/jquery.min');
+Util::addScript('grc_sharereview', '3rdParty/datatables.min');
+Util::addScript('grc_sharereview', 'app');
+Util::addScript('grc_sharereview', 'visualization');
+Util::addScript('grc_sharereview', 'userGuidance');
 ?>
 
 <div id="app-navigation">

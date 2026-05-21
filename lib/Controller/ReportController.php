@@ -50,10 +50,10 @@ class ReportController extends Controller {
      */
     public function saveSettings(string $folder, string $schedule, string $type = 'pdf'): DataResponse {
         $user = $this->userSession->getUser();
-        $this->appConfig->setValueString('sharereview', 'folderOwner', $user->getUID());
-        $this->appConfig->setValueString('sharereview', 'reportFolder', $folder);
-        $this->appConfig->setValueString('sharereview', 'schedule', $schedule);
-        $this->appConfig->setValueString('sharereview', 'reportType', $type);
+        $this->appConfig->setValueString('grc_sharereview', 'folderOwner', $user->getUID());
+        $this->appConfig->setValueString('grc_sharereview', 'reportFolder', $folder);
+        $this->appConfig->setValueString('grc_sharereview', 'schedule', $schedule);
+        $this->appConfig->setValueString('grc_sharereview', 'reportType', $type);
 
         $this->jobList->remove(GenerateReportJob::class);
         if ($schedule !== 'none') {
