@@ -1,4 +1,5 @@
-# SPDX-FileCopyrightText: 2024 Marcel Scherello
+# SPDX-FileCopyrightText: 2025-2026 Nextcloud GmbH
+# SPDX-FileCopyrightText: 2024-2025 Marcel Scherello
 # SPDX-License-Identifier: AGPL-3.0-or-later
 version = 1
 SPDX-PackageName = "grc_sharereview"
@@ -8,35 +9,47 @@ SPDX-PackageDownloadLocation = "https://github.com/nextcloud-gmbh/grc_sharerevie
 [[annotations]]
 path = "l10n/**"
 precedence = "aggregate"
-SPDX-FileCopyrightText = "2019-2024 Nextcloud translators"
+SPDX-FileCopyrightText = "2019-2026 Nextcloud translators"
 SPDX-License-Identifier = "AGPL-3.0-or-later"
 
 [[annotations]]
-path = [".**", "**.md", "**.json", "**.code-workspace", "tests/**"]
+path = [".idea/**", ".tx/config"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024-2026 Marcel Scherello"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+[[annotations]]
+path = ["composer.json"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2024 Marcel Scherello, 2026 Nextcloud GmbH"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+[[annotations]]
+path = ["screenshots/**"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2024 Marcel Scherello"
 SPDX-License-Identifier = "AGPL-3.0-or-later"
 
 [[annotations]]
-path = ["img/app.svg", "img/app-dark.svg", "screenshots/**"]
+path = ["img/deck.svg", "img/talk.svg"]
 precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Marcel Scherello"
-SPDX-License-Identifier = "AGPL-3.0-or-later"
+SPDX-FileCopyrightText = "2016-2026 Nextcloud GmbH"
+SPDX-License-Identifier = "LicenseRef-NextcloudTrademarks"
 
 [[annotations]]
-path = ["img/calendar.svg", "img/password.svg", "img/talk.svg", "img/delete.svg", "img/edit.svg", "img/email.svg", "img/group.svg", "img/link.svg", "img/more.svg", "img/read.svg", "img/user.svg", "img/check.svg", "img/new.svg", "img/reset.svg", "img/shares.svg", "img/talk.svg", "img/deck.svg", "img/teams.svg", "img/federation.svg"]
+path = ["img/app-dark.svg", "img/app.svg", "img/calendar.svg", "img/check.svg", "img/delete.svg", "img/download.svg", "img/edit.svg", "img/email.svg", "img/group.svg", "img/groups.svg", "img/link.svg", "img/mail.svg", "img/more.svg", "img/new.svg", "img/password.svg", "img/person.svg", "img/read.svg", "img/reset.svg", "img/settings.svg", "img/share.svg", "img/shares.svg", "img/talk.svg"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2018-2024 Google LLC"
 SPDX-License-Identifier = "Apache-2.0"
 
 [[annotations]]
-path = "appinfo/info.xml"
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2024 Marcel Scherello"
-SPDX-License-Identifier = "AGPL-3.0-or-later"
-
-[[annotations]]
 path = ["css/3rdParty/datatables.min.css", "js/3rdParty/datatables.min.js"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "SpryMedia Ltd"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["js/3rdParty/jquery.min.js"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "OpenJS Foundation and other contributors <https://openjsf.org/>"
 SPDX-License-Identifier = "MIT"
